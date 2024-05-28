@@ -54,5 +54,5 @@ def do_var13():
 
         st.pyplot(fig)
 
-if __name__ == "__main__":
+if __name__ == "__do_var13__":
     do_var13()
