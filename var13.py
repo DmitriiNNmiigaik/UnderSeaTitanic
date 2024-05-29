@@ -14,7 +14,6 @@ def load_data(file_path):
                 except ValueError:
                     pass
     return data
-
 def count_deceased_children(data, max_age):
     embarked_counts = {'C': 0, 'Q': 0, 'S': 0}
     for row in data:
