@@ -1,5 +1,4 @@
 import csv
-import matplotlib.pyplot as plt
 import streamlit as st
 
 # from var04 import do_var04
