@@ -8,7 +8,7 @@ from var13 import do_var13
 # from var14 import do_var14
 # from var17 import do_var17
 
-st.image('titanik1912.jpg')
+st.image('titanic1912.jpg')
 choice = st.selectbox ('Номер варианта:', ['Вариант №04', 'Вариант №06', 'Вариант №11', 'Вариант №13', 'Вариант №14', 'Вариант №17'])
 
 if choice == 'Вариант №04':
