@@ -22,7 +22,7 @@ def get_var6(lines, selected_port):
 
     return avg_survived, avg_perished
 
-def main():
+def var_6():
     st.title('Средняя стоимость билета у спасенных и погибших пассажиров')
 
     ports = {'C': 'Шербур', 'Q': 'Квинстаун', 'S': 'Саутгемптон'}
@@ -47,4 +47,4 @@ def main():
     plt.suptitle(f'Средняя стоимость билета в порту {selected_port_value}')
     st.pyplot(fig)
 
-main()
+var_6()
