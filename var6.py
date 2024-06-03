@@ -48,3 +48,12 @@ def var_6():
     st.pyplot(fig)
 
 var_6()
+
+
+def do_var6():
+    pass
+
+
+if __name__ == "__do_var6__":
+    do_var6()
+    
