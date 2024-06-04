@@ -1,5 +1,6 @@
 # import streamlit as st
 
+#функция
 def  get_bilet(lines):
 
 
