@@ -1,7 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 
-def get_var6(lines, selected_port):
+def get_var06(lines, selected_port):
     ports = {'C': 'Шербур', 'Q': 'Квинстаун', 'S': 'Саутгемптон'}
     result = {'survived': [], 'perished': []}
 
@@ -22,7 +22,7 @@ def get_var6(lines, selected_port):
 
     return avg_survived, avg_perished
 
-def var_6():
+def var_06():
     st.title('Средняя стоимость билета у спасенных и погибших пассажиров')
 
     ports = {'C': 'Шербур', 'Q': 'Квинстаун', 'S': 'Саутгемптон'}
@@ -35,7 +35,7 @@ def var_6():
     with open("data.csv") as file:
         lines = file.readlines()
 
-    avg_survived, avg_perished = get_var6(lines, selected_port)
+    avg_survived, avg_perished = get_var06(lines, selected_port)
 
     st.write(f"Средняя стоимость билета для спасенных пассажиров в порту {selected_port_value}: {avg_survived}")
     st.write(f"Средняя стоимость билета для погибших пассажиров в порту {selected_port_value}: {avg_perished}")
@@ -47,13 +47,13 @@ def var_6():
     plt.suptitle(f'Средняя стоимость билета в порту {selected_port_value}')
     st.pyplot(fig)
 
-var_6()
+var_06()
 
 
-def do_var6():
+def do_var06():
     pass
 
 
-if __name__ == "__do_var6__":
-    do_var6()
+if __name__ == "__do_var06__":
+    do_var06()
     
