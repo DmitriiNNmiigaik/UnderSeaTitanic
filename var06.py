@@ -53,7 +53,9 @@ var_06()
 def do_var06():
     pass
 
-
 if __name__ == "__do_var06__":
     do_var06()
+
+
+
     
