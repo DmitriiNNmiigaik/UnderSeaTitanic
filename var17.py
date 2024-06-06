@@ -1,7 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 
-#последняя версия
 def  get_bilet(lines):
     S_bilet=0
     S_passajir=0
