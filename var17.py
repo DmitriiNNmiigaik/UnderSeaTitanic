@@ -2,6 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 
+#изменения от 06.06.
 def  get_bilet(lines):
     with (open('data.csv') as file):
         #вводим переменные с пассажирами и билетами
