@@ -15,5 +15,7 @@ jobs:
           python-version: "3.12"
       - name: install dependencies
         run: pip install -r requirements.txt
+      - name: Lint with flake8
+        run: flake8 *.py
       - name: Run tests
         run: pytest *_tests.py
