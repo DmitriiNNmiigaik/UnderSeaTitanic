@@ -1,13 +1,17 @@
 
 from var17 import get_bilet
 
-#последняя версия
+# последняя версия
+
+
 def test_get_bilet_ordinary_one_port():
     lines = [',,,,,,,,,,7.25,,S',
              ',,,,,,,,,,71.2833,,C',
              ',,,,,,,,,,8.4543,,Q']
 
-    assert get_bilet(lines) == (7.25, 7.25, 7.25, 71.28, 71.2833, 71.2833, 8.45, 8.4543, 8.4543)
+    assert get_bilet(lines) == (7.25, 7.25, 7.25, 71.28, 71.2833, 71.2833,
+                                8.45, 8.4543, 8.4543)
+
 
 def test_get_bilet_ordinary_three_port():
     lines = [',,,,,,,,,,7.25,,S',
@@ -22,7 +26,9 @@ def test_get_bilet_ordinary_three_port():
              ',,,,,,,,,,27.7208,,C',
              ',,,,,,,,,,7.75,,Q']
 
-    assert get_bilet(lines) == (15.53,  7.25,  31.275,     35.41, 7.225, 71.2833,     8.08, 7.75, 8.4543)
+    assert get_bilet(lines) == (15.53,  7.25,  31.275,     35.41, 7.225,
+                                71.2833,     8.08, 7.75, 8.4543)
+
 
 def test_get_bilet_empty():
     lines = [',,,,,,,,,,7.25,,S',
@@ -34,8 +40,5 @@ def test_get_bilet_empty():
              ',,,,,,,,,,,,C',
              ',,,,,,,,,,,,Q']
 
-    assert get_bilet(lines) ==  (7.25, 7.25, 7.25,    71.28, 71.2833, 71.2833,    8.45, 8.4543, 8.4543)
-
-
-
-
+    assert get_bilet(lines) == (7.25, 7.25, 7.25,    71.28, 71.2833,
+                                71.2833,    8.45, 8.4543, 8.4543)
