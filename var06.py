@@ -40,10 +40,10 @@ def do_var06():
         lines = file.readlines()
         avg_survived, avg_perished = get_var06(lines, selected_port)
 
-    st.write(f"Средняя стоимость билета для спасенных пассажиров в порту"
-             f"{selected_port_value}: {avg_survived}")
-    st.write(f"Средняя стоимость билета для погибших пассажиров в порту"
-             f"{selected_port_value}: {avg_perished}")
+    st.dataframe({'Статус': ['Спасен', 'Погиб'],
+                  'Средняя цена билета у спасенных и '
+                  'погибших пассажиров в порту':
+                  [avg_survived, avg_perished]})
 
     fig = plt.figure(figsize=(10, 5))
     plt.bar(['Спасенные', 'Погибшие'],
