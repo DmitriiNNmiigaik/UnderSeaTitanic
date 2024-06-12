@@ -26,14 +26,14 @@ def count_deceased_children(data, max_age):
 
 
 def do_var13():
-    st.image('titanik-50.jpg')
-    st.title('Количество погибших детей на Титанике по каждому пункту посадки')
+    st.subheader('Количество погибших детей на Титанике по каждому'
+                 ' пункту посадки')
 
     file_path = 'data.csv'
     data = load_data(file_path)
 
-    max_age = st.number_input('Введите максимальный возраст для подсчета детей'
-                              ' (1-18):',
+    max_age = st.number_input('Для просмотра результатов, введите возраст'
+                              ' детей до 18 лет включительно:',
                               min_value=1, max_value=18, value=18)
 
     if st.button('Показать результаты'):
@@ -45,9 +45,12 @@ def do_var13():
             ['Саутгемптон', embarked_counts['S']]
         ]
 
-        st.write(f"Количество погибших детей (возраст до"
-                 f" {max_age} включительно) по пунктам посадки:")
-        st.table(table_data)
+        my_dataframe = {
+            'Название порта': [row[0] for row in table_data],
+            'Количество погибших детей': [row[1] for row in table_data]
+        }
+
+        st.dataframe(my_dataframe)
 
         ports = ['Шербур', 'Квинстаун', 'Саутгемптон']
         counts = [embarked_counts['C'], embarked_counts['Q'],
@@ -57,11 +60,11 @@ def do_var13():
         ax.bar(ports, counts, color=['blue', 'green', 'red'])
         ax.set_xlabel('Порты посадки')
         ax.set_ylabel('Количество погибших детей')
-        ax.set_title(f'Количество погибших детей (возраст до'
-                     f' {max_age} включительно) по пунктам посадки')
+        ax.set_title(f'Количество погибших детей (возраст'
+                     f' до {max_age} включительно) по пунктам посадки')
 
         st.pyplot(fig)
 
 
-if __name__ == "__do_var13__":
+if __name__ == "__main__":
     do_var13()
