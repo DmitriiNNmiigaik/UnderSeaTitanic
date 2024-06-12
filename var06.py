@@ -1,8 +1,9 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 
+
 def get_var06(lines, selected_port):
-    ports = {'C': 'Шербур', 'Q': 'Квинстаун', 'S': 'Саутгемптон'}
+    {'C': 'Шербур', 'Q': 'Квинстаун', 'S': 'Саутгемптон'}
     result = {'survived': [], 'perished': []}
 
     for line in lines:
@@ -17,10 +18,13 @@ def get_var06(lines, selected_port):
                 else:
                     result['perished'].append(fare)
 
-    avg_survived = sum(result['survived']) / len(result['survived']) if result['survived'] else 0
-    avg_perished = sum(result['perished']) / len(result['perished']) if result['perished'] else 0
+    avg_survived = sum(result['survived']) / len(result['survived']) \
+        if result['survived'] else 0
+    avg_perished = sum(result['perished']) / len(result['perished']) \
+        if result['perished'] else 0
 
     return avg_survived, avg_perished
+
 
 def do_var06():
     st.title('Средняя стоимость билета у спасенных и погибших пассажиров')
@@ -34,22 +38,23 @@ def do_var06():
 
     with open("data.csv") as file:
         lines = file.readlines()
+        avg_survived, avg_perished = get_var06(lines, selected_port)
 
-    avg_survived, avg_perished = get_var06(lines, selected_port)
+    st.dataframe({'Статус': ['Спасен', 'Погиб'],
+                  'Средняя цена билета у спасенных и '
+                  'погибших пассажиров в порту':
+                  [avg_survived, avg_perished]})
 
-    st.write(f"Средняя стоимость билета для спасенных пассажиров в порту {selected_port_value}: {avg_survived}")
-    st.write(f"Средняя стоимость билета для погибших пассажиров в порту {selected_port_value}: {avg_perished}")
-
-    fig=plt.figure(figsize=(10,5))
-    plt.bar(['Спасенные', 'Погибшие'], [avg_survived, avg_perished], color=['green', 'red'])
+    fig = plt.figure(figsize=(10, 5))
+    plt.bar(['Спасенные', 'Погибшие'],
+            [avg_survived, avg_perished],
+            color=['green', 'red'])
     plt.xlabel('Статус')
+
     plt.ylabel('Средняя цена')
     plt.suptitle(f'Средняя стоимость билета в порту {selected_port_value}')
     st.pyplot(fig)
 
+
 if __name__ == "__do_var06__":
     do_var06()
-
-
-
-    
