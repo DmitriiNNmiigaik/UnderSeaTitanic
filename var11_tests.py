@@ -1,3 +1,5 @@
+import pytest
+
 from var11 import filter_by_age_category, calculate_survival_rates
 
 
@@ -8,8 +10,8 @@ def test_filter_by_age_category():
         {'Age': 65, 'Survived': '1'},
     ]
     yound = filter_by_age_category(data, 'Молодой до 30 лет')
-    middle_aged = filter_by_age_category(data, 'Среднего возраста'
-                                               'от 30 до 60')
+    middle_aged = filter_by_age_category(data, 'Среднего возраста от'
+                                               ' 30 до 60')
     old = filter_by_age_category(data, 'Старый старше 60')
 
     assert len(yound) == 1
@@ -51,3 +53,7 @@ def test_no_passengers_in_category():
     survived_rate, deceased_rate = calculate_survival_rates(filtered_data)
     assert survived_rate == 0.0
     assert deceased_rate == 0.0
+
+
+if __name__ == '__main__':
+    pytest.main()
