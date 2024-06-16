@@ -89,22 +89,22 @@ with open("data.csv") as file:
 
 
 def do_var17():
-    st.image('Titanic.jpg')
     st.title('Стоимость билета по каждому пункту посадки.')
-    option = st.selectbox('Стоимость билета', ['Средн', 'Миним', 'Максим'])
-    pport = ['Порт S', 'Порт C', 'Порт Q']
+    option = st.selectbox('Выберите категорию стоимости билета',
+                          ['Средняя', 'Минимальная', 'Максимальная'])
+    pport = ['Шербур', 'Саутгемптон', 'Квинстаун']
 
-    if option == "Средн":
+    if option == "Средняя":
         avg_port = [S_srednee, C_srednee, Q_srednee]
 
-    if option == "Миним":
+    if option == "Минимальная":
         avg_port = [S_min, C_min, Q_min]
 
-    if option == "Максим":
+    if option == "Максимальная":
         avg_port = [S_max, C_max, Q_max]
 
     data = {'Порт посадки': pport, 'Cтоимость билета': avg_port}
-    st.table(data)
+    st.dataframe(data, use_container_width=True)
 
     fig = plt.figure(figsize=(8, 3))
     plt.bar(pport, avg_port)
@@ -113,7 +113,5 @@ def do_var17():
     plt.title("Средняя стоимость по портам посадки")
 
     st.pyplot(fig)
-
-
-if __name__ == "__do_var17__":
-    do_var17()
+    if __name__ == "__do_var17__":
+        do_var17()
