@@ -1,11 +1,11 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 
-st.image('c.jpg')
 filename = "data.csv"
 
 
 def show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f):
+    st.image('c.jpg')
     st.header('Данные пассажиров Титаника')
     st.write('Выбираем пол для выживших и погибших пассажиров.')
     option = st.selectbox('Значение поля Sex:', ['Мужской', 'Женский'])
