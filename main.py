@@ -4,7 +4,7 @@ import streamlit as st
 from var06 import do_var06
 from var11 import do_var11
 from var13 import do_var13
-# from var14 import do_var14
+from var14 import do_var14
 from var17 import do_var17
 
 st.image('titanic1912.jpg')
@@ -33,8 +33,8 @@ elif choice == 'Вариант №13':
     # указав максимальный возраст (число от 1 до 18). Приносим свои
     # извинения.')
 elif choice == 'Вариант №14':
-    # do_var14()
-    st.write('К сожалению данная страница находится в разработке. Но скоро вы'
+    do_var14()
+    # st.write('К сожалению данная страница находится в разработке.Но скоро вы'
              ' сможете узнать число родственников отдельно для выживших и'
              ' погибших пассажиров указанного пола. Приносим свои извинения.')
 elif choice == 'Вариант №17':
