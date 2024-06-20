@@ -5,7 +5,7 @@ st.image('c.jpg')
 filename = "data.csv"
 
 
-def do_var14(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f):
+def show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f):
     st.header('Данные пассажиров Титаника')
     st.write('Выбираем пол для выживших и погибших пассажиров.')
     option = st.selectbox('Значение поля Sex:', ['Мужской', 'Женский'])
@@ -79,8 +79,7 @@ def work(lines):
     return sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f
 
 
-lines = get_data(filename)
-
-sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f = work(lines)
-
-do_var14(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f)
+def do_var14():
+    lines = get_data(filename)
+    sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f = work(lines)
+    show_web(sum_liave_m, sum_liave_f, sum_dead_m, sum_dead_f)
